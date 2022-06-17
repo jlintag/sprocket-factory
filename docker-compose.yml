@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: development
-    image: factory-sprocket-api:latest
+    image: sprocket-factory-api:latest
     ports:
       - 8000:8000
     volumes:
