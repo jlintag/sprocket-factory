@@ -1,13 +1,13 @@
 import json
 from jsonschema import validate
 from fastapi.testclient import TestClient
-from api.main import app
+from src.api.main import app
 
 client = TestClient(app)
 
 
 def get_schema():
-    with open("backend-python-api/test/schemas/factory.json", "r") as file:
+    with open("src/test/schemas/factory.json", "r") as file:
         schema = json.load(file)
     return schema
 

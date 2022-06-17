@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "backend-python-api"
+name = "sprocket-factory"
 version = "0.1.0"
 description = "RESTful API backed by Python"
 authors = ["Josh Lintag <jlintag@gmail.com>"]
