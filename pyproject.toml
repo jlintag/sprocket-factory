@@ -8,10 +8,11 @@ authors = ["Josh Lintag <jlintag@gmail.com>"]
 python = "^3.9"
 fastapi = "^0.78.0"
 uvicorn = "^0.17.6"
-requests = "^2.28.0"
+jsonschema = "^4.6.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
+requests = "^2.28.0"
 black = "^22.3.0"
 
 [build-system]

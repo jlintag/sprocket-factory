@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Factory",
+  "description": "A factory request json",
+  "type": "object",
+  "properties": {
+    "chart_data": {
+      "description": "Chart data",
+      "type": "object"
+    }
+  },
+  "required": ["chart_data"]
+}
