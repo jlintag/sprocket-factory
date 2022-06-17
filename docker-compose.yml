@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    image: factory-sprocket-api:latest
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend-python-api/api:/src
