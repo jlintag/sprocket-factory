@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "backend-python-api"
+version = "0.1.0"
+description = "RESTful API backed by Python"
+authors = ["Josh Lintag <jlintag@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.78.0"
+uvicorn = "^0.17.6"
+requests = "^2.28.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+black = "^22.3.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
