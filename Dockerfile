@@ -42,7 +42,7 @@ RUN poetry install --no-dev
 ###############################################
 FROM python-base as development
 COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
-COPY ./sprocket-factory/api /src/
+COPY ./src/api /src/
 CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--reload"]
 
 # ###############################################
