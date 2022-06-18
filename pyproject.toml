@@ -9,6 +9,11 @@ python = "^3.9"
 fastapi = "^0.78.0"
 uvicorn = "^0.17.6"
 jsonschema = "^4.6.0"
+FastAPI-SQLAlchemy = "^0.2.1"
+pydantic = "^1.9.1"
+alembic = "^1.8.0"
+python-dotenv = "^0.20.0"
+psycopg2-binary = "^2.9.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"

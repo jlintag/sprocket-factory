@@ -12,10 +12,12 @@ All commands are run from the root directory
 
 ### Run app locally for development
 - `poetry run uvicorn src.api.main:app --reload`
+- You'll want to source the .env file
 
 ### Run app via `docker` for development
 - `docker build -t sprocket-factory-api .`
 - `docker run -it -p 8000:8000 --rm --name sprocket-factory-api sprocket-factory-api:latest`
+- You'll want to source the .env file or pass in an environment variable for DATABASE_URL
   
 ### Run app via `docker compose` for development
 - `docker compose up --build`
