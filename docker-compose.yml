@@ -22,5 +22,6 @@ services:
       - ./src/data:/src/data
       - db:/var/lib/postgresql/data
       - ./src/data/seed_factory_data.sql:/docker-entrypoint-initdb.d/seed_factory_data.sql
+      - ./src/data/seed_sprocket_types.sql:/docker-entrypoint-initdb.d/seed_sprocket_types.sql
 volumes:
   db:
