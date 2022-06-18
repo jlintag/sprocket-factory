@@ -23,3 +23,8 @@ All commands are run from the root directory
 
 #### Run tests
 - `poetry run pytest`
+
+### Database Shenanigans
+#### Manually accessing a running postgres instance (whether by `docker compose` or some other mechanism)
+- Either install postgres on local machine or just [`psql`](https://stackoverflow.com/questions/44654216/correct-way-to-install-psql-without-full-postgres-on-macos)
+- Run `psql -h 0.0.0.0 -p 5432 -U postgres` and enter the password for your instance (also just `postgres` if running from `docker compose`)

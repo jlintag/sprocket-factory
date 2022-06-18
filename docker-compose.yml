@@ -10,3 +10,17 @@ services:
       - 8000:8000
     volumes:
       - ./src/api:/src
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - ./src/data:/src/data
+      - db:/var/lib/postgresql/data
+      - ./src/data/seed_factory_data.sql:/docker-entrypoint-initdb.d/seed_factory_data.sql
+volumes:
+  db:
