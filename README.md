@@ -21,9 +21,10 @@ All commands are run from the root directory
   
 ### Run app via `docker compose` for development
 - `docker compose up --build`
+- `docker compose down -v --rmi all --remove-orphans` to bring it down and remove volumes, containers and leftover images
 
 ### Run tests
-- `poetry run pytest`
+I haven't figured out how to run unittests without a backing database quite yet, so you'll need to `docker compose up` and have the database running in order to run tests. After that, run `poetry run pytest`
 
 ## Database Shenanigans
 ### Flow
