@@ -21,12 +21,45 @@ def test_get_factories():
 
 def test_get_single_factory():
     expected = return_single_hardcoded_factory_value(1)
-    print(expected)
-
     response = client.get("/factories/1")
     result = json.dumps(response.json())
     assert response.status_code == 200
     assert result == expected
+
+
+def test_get_single_sprocket():
+    expected = return_sprocket_id_1()
+    response = client.get("/sprockets/1")
+    result = response.json()
+    assert response.status_code == 200
+    assert result == expected
+
+
+def test_post_single_sprocket():
+    response = client.post(
+        "/sprockets/",
+        json={"teeth": 9, "outside_diameter": 8, "pitch": 7, "pitch_diameter": 6},
+    )
+    result = response.json()
+    assert response.status_code == 201
+    assert result["teeth"] == 9
+    assert result["outside_diameter"] == 8
+    assert result["pitch"] == 7
+    assert result["pitch_diameter"] == 6
+
+
+def test_patch_single_sprocket():
+    expected = return_sprocket_id_2_with_updated_values()
+    response = client.patch(
+        "/sprockets/2",
+        json={"outside_diameter": 10, "pitch_diameter": 12},
+    )
+    result = response.json()
+    assert response.status_code == 202
+    assert result["teeth"] == expected["teeth"]
+    assert result["outside_diameter"] == expected["outside_diameter"]
+    assert result["pitch"] == expected["pitch"]
+    assert result["pitch_diameter"] == expected["pitch_diameter"]
 
 
 def test_validate_get_factories_structure():
@@ -45,8 +78,13 @@ def return_single_hardcoded_factory_value(id: int):
     return json.dumps(factory)
 
 
-# o	An endpoint that returns all sprocket factory data
-# o	An endpoint that returns factory data for a given factory id
-# o	An endpoint that returns sprockets for a given id
-# o	An endpoint that will create new sprocket
-# o	An endpoint that will update sprocket for a given id
+def return_sprocket_id_1():
+    return json.loads(
+        '{"id":1,"pitch_diameter":5,"pitch":1,"outside_diameter":6,"teeth":5}'
+    )
+
+
+def return_sprocket_id_2_with_updated_values():
+    return json.loads(
+        '{"id":2,"pitch_diameter":12,"pitch":1,"outside_diameter":10,"teeth":5}'
+    )
